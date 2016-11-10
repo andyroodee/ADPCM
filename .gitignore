@@ -1,0 +1,6 @@
+.vs/
+ADPCM/data/
+ADPCM/bin/
+ADPCM/obj/
+*.db
+ADPCM/ADPCM.csproj.user
