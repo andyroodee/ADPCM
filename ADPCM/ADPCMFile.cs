@@ -16,13 +16,13 @@ namespace ADPCM
 
         public short[] Data { get; private set; }
 
-        private static int[] DiffLookup = 
+        private static readonly int[] DiffLookup = 
         {
             1, 3, 5, 7, 9, 11, 13, 15,
             -1, -3, -5, -7, -9, -11, -13, -15,
         };
 
-        private static int[] IndexScale = 
+        private static readonly int[] IndexScale = 
         {
             0x0e6, 0x0e6, 0x0e6, 0x0e6, 0x133, 0x199, 0x200, 0x266,
             0x0e6, 0x0e6, 0x0e6, 0x0e6, 0x133, 0x199, 0x200, 0x266

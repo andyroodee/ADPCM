@@ -12,9 +12,10 @@ namespace ADPCM
                 Converter converter = new Converter(options);
                 converter.Run();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Console.Error.WriteLine("usage: ADPCM.exe sourceFolder [frequency] [sourceFileExtension] [destinationFolder]");
+                Console.Error.WriteLine("usage: ADPCM.exe source [frequency] [sourceFileExtension] [destination]");
+                Console.WriteLine(e.Message);
             }
         }
     }

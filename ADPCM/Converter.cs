@@ -13,9 +13,16 @@ namespace ADPCM
 
         public void Run()
         {
-            foreach (string fileName in Directory.GetFiles(options.SourceFolder, "*." + options.Extension))
+            if (options.SourceIsDirectory)
             {
-                ConvertToWav(fileName);
+                foreach (string fileName in Directory.GetFiles(options.Source, "*." + options.Extension))
+                {
+                    ConvertToWav(fileName);
+                }
+            }
+            else
+            {
+                ConvertToWav(options.Source);
             }
         }
 
@@ -36,7 +43,7 @@ namespace ADPCM
 
         private string GetFullOutputFileName(string sourcePath)
         {
-            return options.DestinationFolder + Path.DirectorySeparatorChar + 
+            return options.Destination + Path.DirectorySeparatorChar + 
                 Path.GetFileNameWithoutExtension(sourcePath) + WavFile.Extension;
         }
     }
